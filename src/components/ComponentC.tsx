@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useEventBus } from './EventBus';
 
+import { faker } from '@faker-js/faker';
+
 export default function ComponentC() {
   const { emitter } = useEventBus();
   const [user, setUser] = useState({ name: '', img: '' });
@@ -13,7 +15,7 @@ export default function ComponentC() {
         !didCancel &&
         setUser({
           name: e.data,
-          img: 'https://avatars.githubusercontent.com/u/38855507?s=40&v=4',
+          img: faker.image.avatar(),
         })
     );
     emitter.on(

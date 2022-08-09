@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { faker } from '@faker-js/faker';
 
 import { useEventBus } from './EventBus';
 
@@ -17,7 +18,7 @@ export default function ComponentA() {
   }, [emitter]);
 
   const handleClick = () => {
-    emitter.emit('ea', { data: 'From Component A' });
+    emitter.emit('ea', { data: faker.name.findName() });
   };
 
   return (
