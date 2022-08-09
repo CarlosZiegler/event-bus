@@ -41,6 +41,7 @@ export default function ComponentC() {
         <>
           <img src={user.img} alt="avatar" />
           <span>{user.name}</span>
+          <h6>User From Component A</h6>
         </>
       )}
       {logs.map((log: any) => (
